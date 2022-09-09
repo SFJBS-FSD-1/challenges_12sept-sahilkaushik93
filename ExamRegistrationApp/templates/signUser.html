@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignIn Page</title>
+</head>
+<body>
+<div>
+   <form method="post" action="/signup">
+    <input type="text" name="name" placeholder="Enter Name">
+       <input type="text" name="password" placeholder="Enter Password">
+    <button type="submit">SIGNIN</button>
+</form>
+</div>
+
+    {% if exist == True%}
+
+<h1>User Already exists</h1>
+<form method="post" action="/login">
+    <button type="submit">LogIn</button>
+</form>
+
+    {% endif %}
+
+    {% if exist == False %}
+<h1>User Added Successfully</h1>
+<form method="get" action="/login">
+    <button type="submit">LogIn</button>
+</form>
+
+    {% endif %}
+</body>
+</html>
