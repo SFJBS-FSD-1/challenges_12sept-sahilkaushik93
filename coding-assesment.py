@@ -52,8 +52,10 @@ def count_zero():
     num_3 = int(input("Enter number to check zeroes: "))
     fact = 1
     count = 0
+    # Calculating factorial of number
     for i in range(1, num_3):
         fact = fact * i
+    # Counting number of zeroes
     while fact > 9:
         count += int(fact % 10 == 0)
         fact //= 10
@@ -100,18 +102,19 @@ print(make_dictionary(list1=list1, list2=list2))
 # given_places = {("19.07'53.2”, “72.54'51.0”): "Mumbai", ("28.33'34.1", "77.06'16.6"): "Delhi"}
 places = {("19.07'53.2", "72.54'51.0"): "Mumbai", ("8.33'34.1", "77.06'16.6"): "Delhi"}
 
-city_pos = {}
-city = {}
+def dict_format(places):
+    city = {}
+    for i,j in places.items():
+        lat_long = {}
+        lat_long["Latitude"] = i[0]
+        lat_long["Longitude"] = i[1]
+        print(lat_long)
+        city[places[i]] = lat_long
+    return ("Formatted dictionary is as following: ",city)
 
-for i,j in places.items():
-    city_pos["Latitude"] = i[0]
-    city_pos["Longitude"] = i[1]
-    city[j] = city_pos
 
-
-# print(city_pos)
 print("Challenge 5 ***************************************************************************************************** ")
-print(city)
+print(dict_format(places))
 
 # Challnege
 # 6: Given mylist = [3, 5, 4, 6, 9, 10, 2, 8, 7, 1]
