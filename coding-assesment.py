@@ -79,6 +79,7 @@ print(count_zero())
 list1 = ["India", "England", "Spain"]
 list2 = ["Delhi", "London", "Madrid"]
 
+
 def make_dictionary(list1, list2):
     dict1 = {}
     for i in range(len(list1)):
