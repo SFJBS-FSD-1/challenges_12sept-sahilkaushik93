@@ -48,7 +48,20 @@ print(reverse_number())
 # 3: Write a function where user will enter a natural number as input and output returns the number of zeroes in the
 # end of the factorial of that number.Conversion of number to string is not allowed
 
+def count_zero():
+    num_3 = int(input("Enter number to check zeroes: "))
+    fact = 1
+    count = 0
+    for i in range(1, num_3):
+        fact = fact * i
+    while fact > 9:
+        count += int(fact % 10 == 0)
+        fact //= 10
 
+    return ("No of zeroes in the factorial of number: ", count)
+
+print("Challenge 3 ***************************************************************************************************** ")
+print(count_zero())
 
 # Challenge
 # 4: list1 = ["India", "England", "Spain"]
